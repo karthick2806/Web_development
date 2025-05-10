@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            for(i=0;i<100;i++)
+            {
+                if(i%2!=0)
+                {
+                    console.log(i)
+                }
+            }
+        </script>
+    </body>
+</html>
