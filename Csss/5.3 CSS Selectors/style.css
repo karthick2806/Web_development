@@ -6,9 +6,21 @@ ol {
 
 /* Write your CSS below, don't change the rules above. */
 p{
-  color:red;
+  color:red;       /*general selector*/
 }
 
 .note{
-  font-size:20px;
+  font-size:20px;     /*only on the class*/
+}
+
+#id-selector-demo{    /* unique one per html code*/
+  color:green
+}
+
+li[value="4"]{
+  color:blue       /*only on the class*/
+}   
+
+*{
+  text-align: center
 }
