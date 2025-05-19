@@ -6,15 +6,17 @@ ol {
 
 /* Write your CSS below, don't change the rules above. */
 p{
-  color:red;       /*general selector*/
+  color:red;
+  background-color:aqua;       /*general selector*/
 }
 
 .note{
-  font-size:20px;     /*only on the class*/
+  font-size:20px;    /*only on the class*/
 }
 
 #id-selector-demo{    /* unique one per html code*/
-  color:green
+  color:whitesmoke;
+  background-color:#5D3891;
 }
 
 li[value="4"]{
