@@ -17,6 +17,10 @@ p{
 #id-selector-demo{    /* unique one per html code*/
   color:whitesmoke;
   background-color:#5D3891;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-decoration:line-through;
+  text-align:center;
+  font-size:30px;
 }
 
 li[value="4"]{
