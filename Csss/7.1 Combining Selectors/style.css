@@ -1,0 +1,31 @@
+h1,h2{
+    color:blueviolet;  /*1.group selector*/
+}
+
+.box>.done{
+    color:firebrick; /*
+                         2.parent>child selector but only
+                          one level below only works 
+                             it also works with .done
+                             instead of p   */
+}
+
+body .list{
+    color:blue; /*descendant selector
+    parent to grand child kinda selectoralso works with
+    ".box li"*/
+}
+
+li.done{
+    color:seagreen;/*specific selector down to a element
+    can specifically select an element in li by its class
+    if it has id selector then use # instead of .*/
+    
+}
+
+body ul p.done{
+    color:aqua;/*can also be done wid
+    "ul p.done" or "body ul p" its called
+    combined selector*/
+}
+    
