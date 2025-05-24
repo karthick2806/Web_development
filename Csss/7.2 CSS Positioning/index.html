@@ -4,13 +4,53 @@
 <head>
   <title>CSS Positioning Exercise</title>
   <style>
-    /* Write your code here */
+    .red-circle{
+      background-color:red;
+      height:200px;
+      width:200px;
+      border-radius:500px; 
+      /*50% also works & this is the method to 
+      draw a circle*/
+      position:absolute;
+      /*will loook for its ancestor to
+      the relative position or defaultly
+      takes top left space*/
+      top: 150px;
+      left:250px;
+      }
+
+     .blue-box{
+      height:300px;
+      width: 500px;
+      background-color:blue;
+      position:relative;
+      top:200px;
+      left:200px;
+     } 
+
+    .yellow-triangle{
+      height:0;
+      width: 0;
+      border-left:50px solid transparent;
+      border-right:50px solid transparent;
+      border-bottom:100px solid yellow;
+      /*chatgpt for triangle code*/
+      position:fixed;
+      top: 200px;
+      left:30px; /*needed the most*/
+      z-index:-1;/*hides coz below than 1*/
+      
+    }
+/*also has static type which defaultly
+lies on top right corner*/
   </style>
 </head>
 
 <body>
   <div class="blue-box">
     <div class="red-circle">
+      <div class="yellow-triangle">
+      </div>
     </div>
   </div>
 
