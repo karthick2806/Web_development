@@ -29,3 +29,7 @@ body ul p.done{
     combined selector*/
 }
     
+.school-list > *{
+    color:blueviolet; /*combines specific selector with single
+    child down with universal selector*/
+}
