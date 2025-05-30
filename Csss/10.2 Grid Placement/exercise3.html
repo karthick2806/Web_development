@@ -33,6 +33,7 @@
     .cowboy {
       background-color: #00B9FF;
       grid-column: span 2;
+      grid-area: 1 / 1 / 2 / 3;
     }
 
     .astronaut {
@@ -42,10 +43,12 @@
     }
 
     .book {
-      background-color: #E58331;
-      grid-row:span 2; /*this only done by me*/
-      /* TODO: Make the book div look like 
-      the goal3 image using grid-row. */
+      background-color: #E5833180;/*the 80 on last is a transparency level*/
+      grid-row:span 2; 
+      order:2;/*defaultly all grid box has this value as 0
+      but by setting it gets the top always*/
+      grid-area: 1 / 2 / 3 / 4;
+      
     }
   </style>
 </head>
