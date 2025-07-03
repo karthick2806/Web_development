@@ -10,7 +10,7 @@
         <h1>Registration</h1>
     <form action ="/submit" method="post">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Enter your Name"><br><br>
+        <input type="text" id="name" name="name" placeholder="Enter your Name" required><br><br>
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" placeholder="Enter your Email" required><br><br>
@@ -27,8 +27,50 @@
         <label for="Week-number">Select week:</label>
         <input type="week" id="week-number"><br><br>
 
-        <label for="">Billing month:</label>
-        <input type="month" id="Billing month"><br><br>
+        <p><strong>Gender:</strong></p>
+        <table>
+            <tr>
+                <td >
+                    <input type="radio" id="male" name="gender">
+                    <label for="male">Male</label>
+                </td>
+
+                <td>
+                    <input type="radio" id="female" name="gender">
+                    <label for="Female">Female</label>
+                </td>
+                
+                <td>
+                    
+
+                </td>
+        <input type="radio" id="other" name="gender">
+        <label for="other">Other:</label>
+            </tr>
+        </table>
+   
+        
+
+        <p><strong>Hobbies:</strong></p>
+        <input type="checkbox" id="reading" name="hobbies[]" value="Reading">
+        <label for="reading">Reading</label><br>
+
+        <input type="checkbox" id="sports" name="hobbies[]" value="Sports">
+        <label for="travel">Sports</label><br>
+
+        <input type="checkbox" id="travel" name="hobbies[]" value="Travel">
+        <label for="travel">Travel</label><br>
+
+        <input type="checkbox" id="music" name="hobbies[]" value="Music">
+        <label for="music">Music</label><br>
+
+        <input type="submit" value="Submit">
+
+    </form>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+</body>
+</html>
+
+        
 
 
         
