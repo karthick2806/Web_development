@@ -24,9 +24,9 @@ p{
 }
 
 li[value="4"]{
-  color:blue       /*only on the class*/
+  color:blue;     /*only on the class*/
 }   
 
 *{
-  text-align: center
+  text-align: center;
 }
