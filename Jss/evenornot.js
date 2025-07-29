@@ -1,10 +1,10 @@
-s1(x)
+function s1(x)
 {
     if(x%2==0){
-        console.log((s1));
+        console.log(x+" is even")
     }else{
-        console.log('${x}is odd');
+        console.log(x+" is odd")
     }
                                                       
 }
-s1(50)
+s1(51)

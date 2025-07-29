@@ -1,0 +1,52 @@
+function hello()
+{
+    var K="2806"
+    return K
+}
+
+var G = hello()
+console.log(G)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

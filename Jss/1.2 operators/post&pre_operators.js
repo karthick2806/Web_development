@@ -7,3 +7,11 @@ b=a++   //b=++a will gives the 11//   //a-- is a decrement operator//
 //b=++a gives the output as 11// 
 console.log(b)     //will give 10 coz it doesnt see a again//         //pre increment//
 console.log(a)     //this see the "a" and gives output as 11//
+
+
+
+//add or equal to operator
+x=5
+y=3
+y+=x  //+= refers to y=y+x
+console.log(y)
