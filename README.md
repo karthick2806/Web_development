@@ -1,1 +1,1 @@
-Just a storage of all my practicing and training codings web dev
+A storage of all my java full stack web development codes
