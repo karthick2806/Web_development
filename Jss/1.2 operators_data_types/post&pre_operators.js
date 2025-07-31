@@ -15,3 +15,15 @@ x=5
 y=3
 y+=x  //+= refers to y=y+x
 console.log(y)
+
+
+//power_operator
+let f=5
+let d=Math.pow(f,2) //here f is base and two is the power value  f**2 this can also do the job
+console.log(d)
+
+//exponential notation
+let h=1234e5 //refers to 123400000
+let i=1234e-5 //refers to 123400000
+console.log(h)
+console.log(i)

@@ -1,0 +1,23 @@
+var person = {
+  firstName: "Karthick",
+  lastName: "M",
+  fullname:function() {     //function name should be & must be "FUNCTION"
+    return this.firstName+" "+this.lastName      //this keyword used to access obj props inside the same obj
+    },
+  age: 22,
+  eyeColor: "blue",
+  hobbies:{
+    hobby1:"Movie",
+    hobby2:"Movie review",
+    hobby3:"gymming"
+  }
+}
+
+
+console.log(person.age)   //person["age"] also do the job    //person[x] if var x=age was there 
+person.nationality="Indian"  //u can also add property
+console.log(person)
+delete person.eyeColor  //can also delete a property
+console.log(person)
+console.log("Its a nested obj  "+JSON.stringify(person.hobbies))  //json.stringify turns obj to str format
+console.log("This is a Fullname function  "+person.fullname())
