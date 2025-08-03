@@ -14,4 +14,11 @@ c ??="Karthik" //will only assign c=karthick if the c=null or undefined not on 0
 console.log(c)
 
 
+//difference btwn == and ===
+console.log(10 === 10);      // true (same value, same type - number)
+console.log(10 === "10");    // false (same value, but different types - number vs string)
+console.log(true === 1);     // false (different values and different types - boolean vs number)
+console.log(null === undefined); // false (different types)
+
+
 

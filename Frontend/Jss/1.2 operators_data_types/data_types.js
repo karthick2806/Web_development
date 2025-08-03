@@ -4,3 +4,5 @@ console.log(a)
 let x="Volvo"+16+4 //the first datatype wil be taken into account
 console.log(x)
 
+
+
