@@ -10,4 +10,7 @@ console.log(path); // O/p will be C:\Users\Documents
 let multiLine = "First li\bne\nSecond line\t\twith a tab"; // \n-newline \t-horizontal tab \b-deletes a word before of it
 console.log(multiLine); 
 
-
+let multiline_modified = `this is a first line
+this is a second line
+this is a third line`
+console.log(multiline_modified)  //can give in different line widout using \n
