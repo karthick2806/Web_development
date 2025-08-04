@@ -7,7 +7,7 @@ console.log(a)
 let path = "C:\\Users\\Documents"; // Escaping backslashes
 console.log(path); // O/p will be C:\Users\Documents
 
-let multiLine = "First li\bne\nSecond line\t\twith a tab"; // \n-newline \t-horizontal tab \b-deletes a word before
+let multiLine = "First li\bne\nSecond line\t\twith a tab"; // \n-newline \t-horizontal tab \b-deletes a word before of it
 console.log(multiLine); 
 
 
