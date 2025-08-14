@@ -35,7 +35,7 @@ r1.question("Enter your height in (mtrs):",function(height) {
                 console.log("You are at Obese (class-3/Morbidly obese) category")
             } 
         else{
-                console,log("You've entered a wrong value")
+                console.log("You've entered a wrong value")
             }
         
             
