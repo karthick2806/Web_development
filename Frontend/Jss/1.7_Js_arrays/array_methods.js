@@ -22,9 +22,23 @@ arr.unshift("Jesse pinkman"); //defaultly adds first element
 console.log(arr);
 arr[3] = "Walter white"; //displaces the element on the specific index
 console.log(arr);
-delete arr[0]; //leaves undefined spacein the array-
+//delete arr[0]; //leaves undefined space or holes in the array-
 console.log(arr);
 let goated = arr.concat(got); //concats two arrays desnt change the content
 console.log(goated);             //we can more arrays like this arr.concat(got,brba,)
+arr.copyWithin(3,0,1)     //copies the element (target index , start element , end element)
+console.log(arr)
+let two_dim_arr = [[1,2],[3,4],[5,6]]
+console.log(two_dim_arr)
+console.log("flated array : "+two_dim_arr.flat())
+let mny_hst = ["Professor","Tokyo","Nairobi","Berlin","Helsinki","Moscow"]
+var A = mny_hst.splice(2,1,"Rio","Denver")      //adds element in target space (target , no.of.elements deleted , elems to added)
+console.log(mny_hst)
+console.log("This splice method returns the deleted element "+A)
+//mny_hst.spliced or toSpliced(target,1)  //used to delete one element from the arr without leaving any undefined space
+
+
+
+
 
 
