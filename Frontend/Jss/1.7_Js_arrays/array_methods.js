@@ -36,9 +36,9 @@ var A = mny_hst.splice(2,1,"Rio","Denver")      //adds element in target space (
 console.log(mny_hst)
 console.log("This splice method returns the deleted element "+A)
 //mny_hst.spliced or toSpliced(target,1)  //used to delete one element from the arr without leaving any undefined space
-
-
-
+console.log("\nSliced from 2 index "+mny_hst.slice(2))    //slices from second index and forms a new array
+console.log("\nSlice a specific part from a arr "+mny_hst.slice(1,4))    //cutout particular element
+console.log("\n"+mny_hst.toString())   //converts into string
 
 
 
