@@ -11,7 +11,7 @@ console.log(pens.findIndex(function(element,index,array)
 {
     return element==="Cello"                         //returns index of particular array
 }))
-console.log(rank.some(function(element,index,array)
+console.log(rank.some(function(element,index,array)   //here we only need element so we can take element index,array aren't necessary
 {
     return element%2==0                             //returns even if any one condition satisfies
 }))
