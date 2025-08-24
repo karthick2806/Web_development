@@ -2,7 +2,7 @@ let fruits = ["Apple","Orange","Banana","Dragon fruit","Kiwi","Pear","Pome grana
 let mark = [10,80,40,60,20,50,70,100,90,30]
 for(let i=0;i<mark.length;i++)
 {
-    
+
     console.log(mark[i]+"")
 }
 console.log(fruits.sort())            //make changes on original array
@@ -22,3 +22,7 @@ let foreach = mark.forEach(function(value)
 
 })
 console.log(txt)
+
+
+
+

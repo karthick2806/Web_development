@@ -39,6 +39,7 @@ console.log("This splice method returns the deleted element "+A)
 console.log("\nSliced from 2 index "+mny_hst.slice(2))    //slices from second index and forms a new array
 console.log("\nSlice a specific part from a arr "+mny_hst.slice(1,4))    //cutout particular element
 console.log("\n"+mny_hst.toString())   //converts into string
+console.log(Array.isArray(mark))        //tells whether a array is array or not
 
 
 
