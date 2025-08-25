@@ -13,15 +13,8 @@ console.log(mark.toSorted(function(a,b)       //console.log(mark.toSorted()) wil
 {
     return a-b      //b-a gives descending order
 }))
-console.log(Math.min.apply(null,mark))
+console.log(Math.min.apply(null,mark)) //null is a syntax
 console.log(Math.max.apply(null,mark))
-let txt =" ";
-let foreach = mark.forEach(function(value)
-{   
-    txt += value +"\n";
-
-})
-console.log(txt)
 
 
 
