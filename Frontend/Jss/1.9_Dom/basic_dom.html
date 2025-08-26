@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./basicdom.js"></script>
+</head>
+<body>
+    <center>
+    <h1 id="title">This is a DOM</h1>
+    <button onclick="clickme()">Click me</button>
+    <P>This is a paragraph</P>
+    <p>This is the second paragraph</p>
+    <button onclick="changefirstpara()">Change First</button>
+    </center> 
+<script>
+        document.getElementById("title").textContent="Title Changed!!"
+        document.body.style.backgroundColor="lightblue";
+        document.querySelector("p").textContent="this was changed"
+
+
+</script>   
+</body>
+</html>
+
+
+
