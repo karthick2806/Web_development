@@ -1,4 +1,4 @@
-let mypromise = new Promise(function(resolve,reject)){
+let mypromise = new Promise(function(resolve,reject){
     let sum = 0
     if (sum == 0){
         resolve("Accepted");
@@ -6,10 +6,10 @@ let mypromise = new Promise(function(resolve,reject)){
     else{
         reject("Rejected");
     }
-}
+})
 
 
-myPromise
+mypromise
     .then(function(value) { console.log(value); })
     .catch(function(error) { console.log(error); })
-    .finally(() => { console.log("Done"); });
+    .finally(() => { console.log("this will executed either the promise resolved or rejected"); });
