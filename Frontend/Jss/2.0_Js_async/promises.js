@@ -8,8 +8,7 @@ let mypromise = new Promise(function(resolve,reject){
     }
 })
 
-
 mypromise
-    .then(function(value) { console.log(value); })
+    .then(function(value) { console.log(value); })      //the value will defaultly execute and take the value when the promise got resolved  
     .catch(function(error) { console.log(error); })
-    .finally(() => { console.log("this will executed either the promise resolved or rejected"); });
+    .finally(() => { console.log("this will executed either the promise resolved or rejected"); }); 
