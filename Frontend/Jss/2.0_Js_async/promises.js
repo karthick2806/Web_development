@@ -16,12 +16,42 @@ mypromise
 
 //static methods in js promise
 
+// Helper function to simulate async tasks
+function asyncTask(name, time, shouldReject = false) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (shouldReject) {
+        reject(`${name} Failed`);
+      } else {
+        resolve(`${name} Success after ${time} ms`);
+      }
+    }, time);
+  });
+}
 
+// Example Promises
+const promise1 = asyncTask('Task 1', 1000);              // Resolves after 1s
+const promise2 = asyncTask('Task 2', 2000);              // Resolves after 2s
+const promise3 = asyncTask('Task 3', 1500, true);       // Rejects after 1.5s
 
+//Promise.all → All promises must resolve, otherwise rejects immediately
+Promise.all([promise1, promise2])
+  .then(results => console.log('Promise.all results:', results))
+  .catch(error => console.log('Promise.all error:', error));
 
+//Promise.allSettled → Wait for all promises to settle (resolve or reject)
+Promise.allSettled([promise1, promise2, promise3])
+  .then(results => console.log('Promise.allSettled results:', results));
 
+//Promise.any → Resolves as soon as any one promise resolves; rejects only if all reject
+Promise.any([promise3, promise1])
+  .then(result => console.log('Promise.any result:', result))
+  .catch(error => console.log('Promise.any error:', error));
 
-
+//Promise.race → Resolves or rejects as soon as the first promise settles
+Promise.race([promise1, promise3])
+  .then(result => console.log('Promise.race result:', result))
+  .catch(error => console.log('Promise.race error:', error));
 
 
 
