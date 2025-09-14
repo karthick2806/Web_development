@@ -36,11 +36,11 @@ let login = async (event) => {
     let errormsg = document.getElementById("error");
 
     if (username === uname && password === pwd) {
-        errormsg.innerText = `⏳ Please wait a minute...`;
+        errormsg.innerText = `Please wait a minute...`;
         let message = await checkpass(pwd);
         errormsg.innerText = message;
     } else {
-        errormsg.innerText = `❌ Your credentials are wrong`;
+        errormsg.innerText = `Your credentials are wrong`;
     }
 
    

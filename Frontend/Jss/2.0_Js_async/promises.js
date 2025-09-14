@@ -25,7 +25,7 @@ function asyncTask(name, time, shouldReject = false) {
       } else {
         resolve(`${name} Success after ${time} ms`);
       }
-    }, time);
+    }, 1000);
   });
 }
 
