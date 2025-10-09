@@ -140,17 +140,6 @@ public class constructors {
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		/*
 		 * 
 		 *THIS keyword types..
