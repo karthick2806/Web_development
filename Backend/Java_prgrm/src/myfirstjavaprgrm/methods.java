@@ -1,7 +1,7 @@
 package myfirstjavaprgrm;
 
-public class methods { //function definition must be inside of class
-	
+ //function definition must be inside of class
+public class methods{	
 	static void my_funct_or_method(String fname,int age){       //it is a funct with para or args passed  //
 		/*🔹 Instance Method (Non-static)
 		-->Belongs to the object.
@@ -50,16 +50,28 @@ public class methods { //function definition must be inside of class
 		}
 	}
 	
+	
+	
+     void parentclass_oda_method(String name) {
+		System.out.println("Parent class method is called");
+	 }
 
-	class child_class extends methods{
-		 
-		
+
+}
+
+//the same method parentclass_oda_method was called in child class its called 
+//method overriding(when subclass and superclass has same method name,parameter,return type)
+
+class child_class extends methods {
+	//@override
+	void parentclass_oda_method(String name){
+		System.out.println("child class method is called by "+name);
 	}
+		
+
+
 	
-	
-	
-	
-	public static void main(String[] args) {  		//calling the function must be inside of psvm
+public static void main(String[] args) {  		//calling the function must be inside of psvm
 		 my_funct_or_method("Karthik",22);   	//karthik is a argument here
 		 //you should create objects to call a public method so
 		 methods my_new_object = new methods();
@@ -67,22 +79,16 @@ public class methods { //function definition must be inside of class
 		 
 		 									
 		 System.out.println(return_function(28)); 
-		 System.out.println(return_function(456.6f));//method overloading(compile-time polymorphism)-->
-		                                 //multiple methods in the same class has same method name but has different types and no.of values or parameters
-		 								//SHOULD DECLARE 456.78f or else it'll take it as double
+		 System.out.println(return_function(456.6f));//SHOULD DECLARE 456.78f or else it'll take it as double
+		 //method overloading(compile-time polymorphism)-->
+		 //multiple methods in the same class has same method name but has different types and no.of values or parameters
+		 								
 		 
-		 System.out.println(fact_orial(5));
-
+		 System.out.println(fact_orial(5)); //recursive
 		 
-    
-	 
-		 
-		 
-		 
-		 
-		 
-		
+		 child_class override_obj = new child_class();
+		 override_obj.parentclass_oda_method("method_overriding");
 
 	}
-
+	
 }
