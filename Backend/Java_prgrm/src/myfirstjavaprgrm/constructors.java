@@ -153,7 +153,74 @@ public class constructors {
         */
 		
 		
-		
+/*
+--->Example without constructor:
+
+class Student {
+    String name;
+    int age;
+
+    // Normal method to set values
+    void setDetails(String n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.setDetails("Karthick", 22);  // manually setting values
+        s1.display();
+    }
+}
+
+
+🧠 Problem here:
+You have to call setDetails() manually every time you create a new student object.
+If you forget to call it → your object has no initialized data (null, 0).
+
+
+
+
+
+
+--->Example with constructor:
+
+class Student {
+    String name;
+    int age;
+
+    // Constructor (same name as class)
+    Student(String n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student("Karthick", 22);  // constructor automatically runs
+        s1.display();
+    }
+}
+
+
+Why this is better:
+*Automatically initializes the object when created.
+*Cleaner code — no need to call extra methods.
+*Helps ensure all objects are properly initialized before use.
+*/
 		
 		
 		

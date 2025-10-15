@@ -27,7 +27,9 @@ public class methods{
 	
 	
 	
-	//Method overloading = return_function
+	//Method overloading is here (return_function)
+	//The compiler decides which method to call at compile-time — that’s why it’s called compile-time polymorphism.
+	
 	static int return_function(int jersey_no){         //function with a parameter passing
 		return jersey_no;
 	}
@@ -61,15 +63,29 @@ public class methods{
 
 //the same method parentclass_oda_method was called in child class its called 
 //method overriding(when subclass and superclass has same method name,parameter,return type)
+//The method call is resolved at runtime, based on the actual object type — that’s why it’s called runtime polymorphism.
 
 class child_class extends methods {
-	//@override
+	//@override  //just for understanding
 	void parentclass_oda_method(String name){
 		System.out.println("child class method is called by "+name);
 	}
 		
-
-
+	
+	
+	
+	
+	/*
+	| Feature         | Method Overloading       | Method Overriding          |
+	| --------------- | ------------------------ | -------------------------- |
+	| Timing          | Compile-time             | Runtime                    |
+	| Parameters      | Must be different        | Must be same               |
+	| Class           | Same class               | Parent-Child classes       |
+	| Return Type     | Can be same or different | Must be same or covariant  |
+	| Access Modifier | No restriction           | Cannot be more restrictive |
+	*/
+	
+	
 	
 public static void main(String[] args) {  		//calling the function must be inside of psvm
 		 my_funct_or_method("Karthik",22);   	//karthik is a argument here
