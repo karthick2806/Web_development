@@ -36,8 +36,7 @@ public class access_and_non_access_modifiers {
 	
 	
 	
-	
-	public static void main(String[] args) {
+public static void main(String[] args) {
 		
 		
 		lion lion_object = new lion();
