@@ -86,7 +86,7 @@ public class inner_class {
 
 		
 		//
-		new local_outer_class().show_4();
+		new local_outer_class().show_4();    //shorthand for object creation but this is a temporary object   
 		
 		
 		//
