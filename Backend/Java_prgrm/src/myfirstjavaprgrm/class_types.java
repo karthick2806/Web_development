@@ -97,6 +97,12 @@ abstract class anonymous_class{
 
 
 
+//we can also use the anonymous class to implement an interface on the fly
+interface interface_01{
+	void method();
+}
+
+
 
 public class class_types {
 	public static void main(String[] args) {
@@ -131,6 +137,17 @@ public class class_types {
 			}
 		};
 		anonymous_obj.anonymous_method();
+		
+		
+		
+		System.out.println("\n");
+		interface_01 interface_01_obj = new interface_01() {            //it is an interface with anonymous class
+			public void method() {
+				System.out.println("This is Anonymous class inside a Interface");
+			}
+			
+		};
+		interface_01_obj.method();
 		
 	}
 }
