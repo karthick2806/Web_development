@@ -146,7 +146,7 @@ public class class_types {
 				System.out.println("This is Anonymous class inside a Interface");
 			}
 			
-		}; 
+		};  
 		interface_01_obj.method();
 		
 	}
