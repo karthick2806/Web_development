@@ -13,14 +13,12 @@ class sample_enum_class{
 		friday(5),
 		saturday(6),
 		sunday(7);
+		
 		/*
 		 *enum constants are public → accessible everywhere
           static → no need to create object
           final → cannot change or reassign
 		 */
-		
-		
-		
 		
 		
 		//enum field
@@ -41,21 +39,49 @@ class sample_enum_class{
 		
 		//enum with a method
 		public void show() {
-			System.out.println("The middle of the week "+this.name); //tells the current obj or enum const can use this for both monday and wednesday
+			System.out.println("The middle of the week "+this.name()); //tells the current obj or enum const can use this for both monday and wednesday
 		}
-		
-		
-		
-		
-		
-		
 	}
 }
+
+
+
+//enum which is not inside the class and with abstract method
+enum operation{
+	add{public int apply(int a,int b) {return a+b;}},          //each constants of enum acts like a subclass
+	sub{public int apply(int a,int b) {return a-b;}};  //declaration here
+	
+	
+	public abstract int apply(int a,int b);   //just abstract method body here
+}
+
+
+//enum with interface
+interface enum_interface{
+	void print();
+}
+
+enum primary implements enum_interface{
+	RED,
+	GREEN,
+	BLUE;
+	
+	public void print() {
+		System.out.println("One of the primary color is "+this.name());
+	}
+	
+	
+}
+
+
+
+
 
 public class enumeration_class {
 
 	public static void main(String[] args) {
 		
+		//for enum inside a class
 		sample_enum_class.days d = sample_enum_class.days.monday;  //if enum is inside any another class then it should be called with"." operator
 		
 		System.out.println(d);
@@ -65,6 +91,23 @@ public class enumeration_class {
         sample_enum_class.days w = sample_enum_class.days.wednesday;
         
         w.show();
+        
+        
+        //for abstract method
+        operation op_add = operation.add;
+        operation op_sub = operation.sub;
+        
+        System.out.println(op_add.apply(6+2,18+2));           //newly tried idkwtf
+        System.out.println(op_sub.apply(50-20,10-8));
+        
+        
+        //for interface
+        primary pr = primary.RED;
+        pr.print();
+        
+        
+        
+        
 	}
 
 }
