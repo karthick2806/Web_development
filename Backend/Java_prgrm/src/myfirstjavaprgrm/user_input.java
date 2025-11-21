@@ -23,7 +23,7 @@ public class user_input {
 		System.out.print("Percentage		:");  //allows only float
 		float percentage = sc.nextFloat();
 		
-		System.out.print("No.of.fail    		:");    //allows large numbers as input
+		System.out.print("No.of.fail    		:"); //allows large numbers as input
 		long longnum = sc.nextLong();
 		
 		System.out.print("Single			:");
@@ -47,6 +47,12 @@ public class user_input {
 		
 		
 		*/
+		
+		
+		
+		sc.close();  //you've to close the scanner object after use 
+		
+		
 		
 		
 		
