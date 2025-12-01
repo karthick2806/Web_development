@@ -68,6 +68,41 @@ public class errors_and_exceptions {
 		*/
 		
 		
+		//normal try,catch,finally code
+		try {
+		    int b = 10/0;  //it will try out the error inside the try block
+		} 
+		catch (ArithmeticException err) {   //should explain what type of error group that the code inside the try block comes under
+			//"e" is a user-defined name we can give whatever we want
+			System.out.println(err.getMessage());     //only message
+			System.out.println(err.toString());       //error type+message
+			err.printStackTrace();                    //full error report
+			
+		}
+
+		finally {
+			System.out.println("This will get printed defaultly");
+		}
+		
+		
+		
+		
+		//types of exception and their order of presenting
+		try {
+			//arithmetic exception
+			int a = 100/0;  
+			
+			//nullpointer exception
+			String null_value = null;
+			
+			//arrayindexoutofbound  exception
+			int[] arr = {1,2,3,4,5};
+			System.out.println(arr[8]);
+			
+			//numberformat exception
+			int c = Integer.parseInt("abc");
+			
+		}
 		
 		 
 		
