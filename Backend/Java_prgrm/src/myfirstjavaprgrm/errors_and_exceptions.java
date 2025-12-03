@@ -282,7 +282,7 @@ public class errors_and_exceptions {
         	
         }
 		 
-        catch(NullPointerException | ArithmeticException e) {
+        catch(NullPointerException | ArithmeticException e) {    //order is must even in this also
         	System.out.println("NullPointerException has occured");
         }
 		
@@ -293,7 +293,8 @@ public class errors_and_exceptions {
         int age = 15;
         
         if (age<18) {
-        	throw new ArithmeticException("Under Age category:Throws a custom error that stops the flow with an msg");
+        	//putting inside comments coz itll make the code stop
+        	//throw new ArithmeticException("Under Age category:Throws a custom error that stops the flow with an msg");      //it is only once for a program
         }
         else {
         	System.out.println("Correct Age category");
@@ -302,13 +303,18 @@ public class errors_and_exceptions {
         
         
         //throws example
-        static String examplethrows(String worrd) throws NullPointerException{
-        	return worrd.length();
+        class coz_we_cant_create_method_inside_main_method_so_this_class{
+        	int examplethrows(String worrd) throws NullPointerException,ArithmeticException {    //but we cant use static method here inside main method b
+        	return worrd.length();      //it doesnt have any hierarchy but u should not put general exception first like this "void test() throws Exception, IOException, SQLException {}"
+        								//and doesnt allows & ,| operators
+        	}
         }
         
         
+        
         try {
-        	examplethrows(null);
+        	coz_we_cant_create_method_inside_main_method_so_this_class  dummy_object = new coz_we_cant_create_method_inside_main_method_so_this_class();
+        	dummy_object.examplethrows(null);
         }
         
         catch(NullPointerException e) {
@@ -316,8 +322,34 @@ public class errors_and_exceptions {
         }
         
 		
+		/*
+        | Feature / Spec                           | **try**                                  | **catch**                     | **finally**              | **throw**                 | **throws**                                |
+        | ---------------------------------------- | ---------------------------------------- | ----------------------------- | ------------------------ | ------------------------- | ----------------------------------------- |
+        | **Purpose**                              | Hold risky code                          | Handle the thrown exception   | Always runs (cleanup)    | Manually throw exception  | Declare that method may throw exception   |
+        | **Type**                                 | Block                                    | Block                         | Block                    | Keyword (action)          | Keyword (warning)                         |
+        | **Where used?**                          | Inside method                            | After try block               | After try/catch          | Inside method body        | In method signature                       |
+        | **Is it mandatory?**                     | No (but usually used with catch/finally) | No (try+finally possible)     | No                       | No                        | No                                        |
+        | **Execution Time**                       | Runtime                                  | Runtime                       | Runtime                  | Runtime                   | Compile-time declaration                  |
+        | **Stops Program?**                       | No                                       | No                            | No                       | Yes (until caught)        | No                                        |
+        | **How many allowed?**                    | One try per structure                    | Multiple catch blocks allowed | Only one finally         | Only one throw at a time  | Many exceptions allowed (comma separated) |
+        | **Syntax**                               | `try { }`                                | `catch(Exception e) { }`      | `finally { }`            | `throw new Exception();`  | `void m() throws A, B { }`                |
+        | **Can contain code?**                    | Yes                                      | Yes                           | Yes                      | No (only throw statement) | No (only declaration)                     |
+        | **Needs exception object?**              | No                                       | Yes (inside)                  | No                       | Yes                       | No                                        |
+        | **Handles exception?**                   | No                                       | YES (primary handler)         | No                       | No                        | No (caller handles)                       |
+        | **Creates exception?**                   | No                                       | No                            | No                       | YES                       | No                                        |
+        | **Used for custom message?**             | No                                       | Yes                           | No                       | Yes                       | No                                        |
+        | **Can throw multiple exceptions?**       | No                                       | No                            | No                       | No (only 1)               | Yes (multiple types)                      |
+        | **Occurs even if exception not thrown?** | Yes (executes normally)                  | No                            | YES (always executes)    | No                        | Yes (still declared)                      |
+        | **Common Use Cases**                     | Risky code                               | Error handling                | Cleanup                  | Validation failures       | Risky functions (file, DB, parsing)       |
+        | **Relation to caller**                   | Internal                                 | Internal                      | Internal                 | Internal                  | External (caller must manage)             |
+        | **Final effect on flow**                 | No effect                                | Handles & continues           | Always runs              | Stops flow                | No effect                                 |
+        | **Used in overriding?**                  | No                                       | No                            | No                       | No                        | Yes (rules apply)                         |
+        | **Order Rules**                          | try must come first                      | catch follows try             | finally after catch/try  | anywhere inside method    | only in method declaration                |
+        | **Example**                              | `try { risky code }`                     | `catch(Exception e) { }`      | `finally { close file }` | `throw new A();`          | `void f() throws A { }`                   |
+		*/
 		
-		
+        
+        
 		
 		
 	}
