@@ -2,6 +2,11 @@ package myfirstjavaprgrm;
 import java.io.File;
 import java.io.IOException;
 import java.io.FileWriter;
+import java.util.Scanner;
+import java.io.FileNotFoundException;
+
+
+
 
 
 public class file_handling {
@@ -97,6 +102,12 @@ public class file_handling {
         System.out.println("Deleted file? " + renamed.delete());            // Delete renamed file
         System.out.println("Deleted folder? " + folder.delete());           // Delete folder (only empty ones)
         
+         File myObj = new File("filename.txt");    //only deletes a file
+         myObj.delete()
+         
+         File myObj = new File("C:\\Users\\MyName\\Test");      //deletes a folder
+         myObj.delete()
+        
          */
         
         
@@ -162,21 +173,12 @@ Absolute and Canonical path
         
         //file write operations
         
-        /*
-        Byte Streams--Use when you work with raw data: images, audio, PDFs, etc.
-        Classes : FileInputStream – read bytes from a file,FileOutputStream – write bytes to a file
-
-        Character Streams--Use when you work with text (characters), like .txt, .java.
-        Classes : FileReader, FileWriter,BufferedReader, BufferedWriter
-        */
+       
         
- 
-        //InputStream / Reader → read from file (in stream = incoming data)
-        //OutputStream / Writer → write to file (out stream = outgoing data)
-      
-         
+        //file write using filewriter
+        
         try (FileWriter file_writer = new FileWriter("Filename.txt")){
-        file_writer.write("Hey!! You will be Amazed when you find me in the file");
+        file_writer.write("Hey!! You will be Amazed when you find me in the file.");
         //file_writer.close();   no needed when you are using try with resource
         }
         
@@ -191,8 +193,9 @@ Absolute and Canonical path
         Java will close it automatically when the block finishes - even if an error occurs.
         */
         
-        try(FileWriter file_appender = new FileWriter("Filename.txt")){
-        	file_appender.append("This is a new text appended by appender");
+        //Append
+        try(FileWriter file_appender = new FileWriter("Filename.txt",true)){   //dont forgot true if you then it will overwrite not appends
+        	file_appender.append(" This is a new text appended by appender");
         }
         
 
@@ -206,25 +209,95 @@ Absolute and Canonical path
         
         //file read operation
 
+        System.out.println("\n");
         // try-with-resources: Scanner will be closed automatically
-        try (Scanner myReader = new Scanner(myObj)) {
-          while (myReader.hasNextLine()) {
-            String data = myReader.nextLine();
+        try (Scanner file_reader = new Scanner(myfileobject)) {
+          while (file_reader.hasNextLine()) {      //hasnextline checks for the next line of the file
+            String data = file_reader.nextLine(); 
             System.out.println(data);
           }
         } catch (FileNotFoundException e) {
-          System.out.println("An error occurred.");
+          System.out.println("An File not found error occurred.");
           e.printStackTrace();
+        }
         
-        
-        
-	
+          
 	}
 		
 	catch(IOException e) {
 		e.printStackTrace();
 	}
 
+	
+	
+	
+	
+	
+	
+	//iostreams
+	System.out.println("\n");
+	
+	/*
+	Stream classes (FileInputStream, FileOutputStream, FileReader, FileWriter)
+	* Direct connection, raw flow.
+
+	Buffered classes (BufferedInputStream, BufferedOutputStream, BufferedReader, BufferedWriter)
+	* Wrap the base streams, store data in a buffer array, reduce disk hits, faster for bigger data.
+	*/
+	
+	
+	 /*
+    Byte Streams--Use when you work with raw data: images, audio, PDFs, etc.
+    Classes : FileInputStream – read bytes from a file,FileOutputStream – write bytes to a file
+
+    Character Streams--Use when you work with text (characters), like .txt, .java.
+    Classes : FileReader, FileWriter,BufferedReader, BufferedWriter
+    */
+    
+
+    //InputStream / Reader → read from file (in stream = incoming data)
+    //OutputStream / Writer → write to file (out stream = outgoing data)
+  
+     
+	
+	/*
+	Stream classes
+
+| Feature           | FileInputStream / FileOutputStream     | FileReader / FileWriter                    |
+| ----------------- | -------------------------------------- | ------------------------------------------ |
+| Data type handled | **Bytes (binary)**                     | **Characters (text/Unicode)**              |
+| Suitable for      | Images, videos, PDFs, raw data         | Logs, text files, config files             |
+| Conversion        | Does **not** understand text encoding  | Converts bytes ↔ characters using encoding |
+| Performance       | Low level, slower per-character        | Higher abstraction, more readable          |
+| Read/Write unit   | 8-bit byte                             | 16-bit char                                |
+| Typical method    | `read()` / `write(byte[])`             | `read()` / `write(String)`                 |
+| Can read text?    | Yes but manually convert               | Yes, built for it                          |
+| Use case          | File upload/download, media processing | Logging, CSV parsing, config reading       |
+
+	
+	 */
+    
+	
+	
+	  
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+        
 	}
 
 }
+	
