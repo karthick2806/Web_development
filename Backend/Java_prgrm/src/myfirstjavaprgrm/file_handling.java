@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.FileWriter;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
-
+import java.io.*;
 
 
 
@@ -260,6 +260,62 @@ Absolute and Canonical path
   
      
 	
+	/* stream vs buffered
+	 * 
+| Aspect                    | Stream Classes (FileInputStream, FileReader, etc.) | Buffered Classes (BufferedInputStream, BufferedReader, etc.) |
+| ------------------------- | -------------------------------------------------- | ------------------------------------------------------------ |
+| Speed                     | Slower — interacts with disk every read/write      | Faster — stores chunks in RAM & sends to disk in batches     |
+| Disk Access               | Every byte/char = disk hit                         | Reads/writes multiple bytes/chars at once                    |
+| Use Case                  | Small files, quick simple operations               | Large files, loops, heavy I/O, backend apps                  |
+| Memory Use                | No extra memory besides basic buffer               | Uses internal buffer array (default 8KB)                     |
+| Performance Impact        | CPU waits more → laggy                             | CPU uses buffer → smooth I/O                                 |
+| Read/Write Style          | byte-by-byte / char-by-char                        | chunked reading / line-based                                 |
+| Latency                   | Higher                                             | Lower                                                        |
+| Flush Needed?             | Mostly auto-written                                | Should flush manually for output streams                     |
+| Try-with-resources        | Recommended but ok without                         | Highly recommended                                           |
+| Example File Size         | 1KB OK                                             | 1MB+ mandatory                                               |
+| Scanner/PrintWriter Combo | Works but slower                                   | Faster + more scalable                                       |
+| Common Use                | quick demos                                        | backend logging, network reads, large config files           |
+
+	 */
+	
+	
+	
+	
+	/*basic vs buffered byte stream
+	 * 
+| Feature          | FileInput/OutputStream | BufferedInput/OutputStream               |
+| ---------------- | ---------------------- | ---------------------------------------- |
+| Operates on      | Binary (bytes)         | Binary (bytes)                           |
+| Performance      | Slow                   | Fast                                     |
+| Disk Calls       | Per byte read/write    | Read/write multiple bytes at once        |
+| Internal Buffer  | ❌ No buffer           | ✔ Yes buffer                             |
+| When to Use      | Tiny binary data       | Large byte files (images, docs, uploads) |
+| Efficiency       | Low                    | High                                     |
+| Typical Use Case | quick operations       | backend API file transfers               |
+
+	 */
+	
+	
+	
+	/*basic vs buffered char streams
+| Feature        | FileReader / FileWriter | BufferedReader / BufferedWriter |
+| -------------- | ----------------------- | ------------------------------- |
+| Operates On    | text/characters         | text/characters                 |
+| Speed          | slower                  | faster                          |
+| Reading Style  | one char at a time      | full line reading possible      |
+| Writing Style  | direct                  | buffered chunks                 |
+| Extra Features | basic                   | `.readLine()` + `.newLine()`    |
+| Best For       | tiny text files         | big configs, logs, parsers      |
+
+	 */
+	
+	
+	
+	
+	
+	
+	
 	/*
 	Stream classes
 
@@ -276,11 +332,135 @@ Absolute and Canonical path
 
 	
 	 */   
-    
+	
+	
+
+	
+	
+	
+	
+	
+	
+	/*
+	 * stream all classes
+| Class                                | Works On                | Raw/Formatted            | Writes Readable Text? | Typical Use                 |
+| ------------------------------------ | ----------------------- | ------------------------ | --------------------- | --------------------------- |
+| FileInputStream                      | bytes                   | raw                      | ❌                     | read binary file            |
+| FileOutputStream                     | bytes                   | raw                      | ❌                     | write binary file           |
+| FileReader                           | characters              | raw                      | ✔                     | read plain text file        |
+| FileWriter                           | characters              | raw                      | ✔                     | write plain text file       |
+| DataInput/OutputStream               | bytes but structured    | formatted for primitives | ❌ (binary)            | saving ints/floats/booleans |
+| ObjectInput/OutputStream             | bytes but object format | formatted for objects    | ❌                     | reading/writing objects     |
+| InputStreamReader/OutputStreamWriter | converts bytes↔chars    | depends                  | ✔                     | encoding control, sockets   |
+| PrintWriter                          | characters              | formatted                | ✔✔                    | logging, formatted writing  |
+
+	 */
+	
+
+	
+	 try (FileOutputStream fos = new FileOutputStream("Filename.txt")) {
+         fos.write("Written by Fileopstream".getBytes());
+     } catch (IOException e) { e.printStackTrace(); }
+
+	 
+	 try (FileInputStream fis = new FileInputStream("Filename.txt")) {
+		 int b;
+		 while((b = fis.read()) != -1) System.out.println((char)b);  //0 to 255 bytes only valid ; -1 not valid
+		 System.out.println();                          //byte to char conversion
+	 } catch (IOException e) { e.printStackTrace(); }
+
+	 
+	 /*
+	 try (FileWriter file_writer = new FileWriter("Filename.txt")){
+        file_writer.write("Hey!! You will be Amazed when you find me in the file.");
+     }catch(IOException e) { e.printStackTrace();}
+	  */
+	
+	 /*
+     try (Scanner file_reader = new Scanner(myfileobject)) {
+          while (file_reader.hasNextLine()) {  String data = file_reader.nextLine();      //hasnextline checks for the next line of the file
+            System.out.println(data);}
+        } catch (FileNotFoundException e) {e.printStackTrace();}
+	  */
+	  
+	 try (DataOutputStream dos = new DataOutputStream(new FileOutputStream("Filename.txt"))) {
+         dos.writeInt(10);        //like inputstream u dont need to convert manually
+         dos.writeDouble(99.9);
+     } catch (IOException e) { e.printStackTrace(); }
+
+     try (DataInputStream dis = new DataInputStream(new FileInputStream("Filename.txt"))) {
+         System.out.println(dis.readInt());
+         System.out.println(dis.readDouble());
+     } catch (IOException e) { e.printStackTrace(); }
+
+     try (ObjectOutputStream oos =
+             new ObjectOutputStream(new FileOutputStream("user.obj"))) {
+             oos.writeObject(new User("Karthik", 21));
+     } catch (IOException e) { e.printStackTrace(); }
+
+     try (ObjectInputStream ois =
+             new ObjectInputStream(new FileInputStream("user.obj"))) {
+    	 		User u = (User) ois.readObject();
+    	 		System.out.println(u.name + " " + u.age);
+     } catch (IOException | ClassNotFoundException e) { e.printStackTrace(); }
+
+     try (OutputStreamWriter osw =
+             new OutputStreamWriter(new FileOutputStream("bridge.txt"), "UTF-8")) {
+    	 		osw.write("UTF Stream Write");
+     } catch (IOException e) { e.printStackTrace(); }
+
+     try (InputStreamReader isr =
+             new InputStreamReader(new FileInputStream("bridge.txt"), "UTF-8")) {
+    	 		int ch;
+    	 		while ((ch = isr.read()) != -1) System.out.print((char) ch);
+    	 		System.out.println();
+     } catch (IOException e) { e.printStackTrace(); }
+
+
+     try (PrintWriter pw = new PrintWriter(new FileWriter("log.txt", true))) {
+    	 pw.println("LOG: Hello PrintWriter Feature");
+     } catch (IOException e) { e.printStackTrace(); }
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	  
-	
+	/*
+	 * buffered all classes
+| Class                           | Works On    | Raw/Formatted | Has Internal Buffer?               | Boosts Performance?            | Typical Use Case                                 |
+| ------------------------------- | ----------- | ------------- | ---------------------------------- | ------------------------------ | ------------------------------------------------ |
+| **BufferedInputStream**         | bytes       | raw           | ✔                                  | ✔ Especially big reads         | wrapping FileInputStream for fast reading binary |
+| **BufferedOutputStream**        | bytes       | raw           | ✔                                  | ✔ especially many small writes | wrapping FileOutputStream for fast binary writes |
+| **BufferedReader**              | characters  | raw           | ✔                                  | ✔ huge for line-wise text read | reading text files line-by-line                  |
+| **BufferedWriter**              | characters  | raw           | ✔                                  | ✔ batching text before writing | writing text efficiently                         |
+| **PrintWriter (Buffered-like)** | characters  | formatted     | ✔ (optional autoflush)             | ✔ formatting + buffer          | logging, writing readable formatted text         |
+| **InputStreamReader + Buffer**  | bytes→chars | depends       | ✔ when wrapped with BufferedReader | ✔ encoding + speed             | reading text from sockets/file streams           |
+| **OutputStreamWriter + Buffer** | chars→bytes | depends       | ✔ when wrapped with BufferedWriter | ✔ encoding + speed             | writing encoded text efficiently                 |
+
+	 */
 	
 	
 	
