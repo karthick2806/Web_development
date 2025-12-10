@@ -1,0 +1,5 @@
+
+Buffered Stream FTW!
+Hello BufferedWriter!
+Second line rocks!INFO: Buffered Logging Works!
+FORMAT: count = 10

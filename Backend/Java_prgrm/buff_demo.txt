@@ -1,0 +1,5 @@
+Hey from buffered class
+Written by buff op stream
+Written by buff writer+file writer
+Second line rocks!INFO: Buffered Logging Works!
+FORMAT: count = 10

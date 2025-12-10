@@ -1,0 +1,6 @@
+Hey!! You will be Amazed when you find me in the file. 
+This is a new text appended by appender 
+Written by Fileopstream
+Written by filewriter
+UTF Stream Write
+LOG: Hello PrintWriter Feature
