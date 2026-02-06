@@ -7,26 +7,26 @@ ol {
 /* Write your CSS below, don't change the rules above. */
 p{
   color:red;
-  background-color:aqua;       /*general selector*/
+  background-color:aqua;       /*Element General selector*/
 }
 
 .note{
-  font-size:20px;    /*only on the class*/
+  font-size:20px;    /*class selector - only on the class*/
 }
 
-#id-selector-demo{    /* unique one per html code*/
+#id-selector-demo{    /*id selector - unique one per html code*/
   color:whitesmoke;
   background-color:#5D3891;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-decoration:line-through;
-  text-align:center;
+  text-align:center;                      
   font-size:30px;
 }
 
 li[value="4"]{
-  color:blue;     /*only on the class*/
+  color:blue;     /*Attribute selector - only on the class*/
 }   
 
 *{
-  text-align: center;
+  text-align: center;   /*Universal selector - its for the whole html*/
 }

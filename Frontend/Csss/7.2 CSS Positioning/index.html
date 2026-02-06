@@ -19,7 +19,7 @@
       left:250px;
       }
 
-     .blue-box{
+     .blue-rect{
       height:300px;
       width: 500px;
       background-color:blue;
@@ -38,8 +38,16 @@
       position:fixed;
       top: 200px;
       left:30px; /*needed the most*/
-      z-index:-1;/*hides coz below than 1*/
+      z-index:0;/*hides coz below than 1*/
       
+    }
+
+    .Green-square{
+      height:100px;
+      width:100px;
+      z-index:-1;
+      position:sticky;
+      background-color:green;
     }
 /*also has static type which defaultly
 lies on top right corner*/
@@ -47,9 +55,11 @@ lies on top right corner*/
 </head>
 
 <body>
-  <div class="blue-box">
+  <div class="blue-rect">
     <div class="red-circle">
       <div class="yellow-triangle">
+        <div class="Green-square">
+        </div>
       </div>
     </div>
   </div>
