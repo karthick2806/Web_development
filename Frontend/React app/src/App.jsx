@@ -6,6 +6,8 @@ import External_module from './Styles/Css_module_styling/External_module.jsx';
 import Inline_and_internal from './Styles/Inline_and_internal.jsx';
 import External from './Styles/External_css/External.jsx';
 import Course_card from './Props_creation/props_example.jsx';
+import Dynamic_content_loading from './Dynamic_content_loading/Dynamic_content_loading.jsx';
+
 
 
 function App() {
@@ -17,10 +19,14 @@ function App() {
     <External_module/>
     <Inline_and_internal/>
     <External/>
+    <courselist/>
+  
+
+
 
     {/*repeatative usage of props with a single template like structure*/}
     <Course_card name="HTML" price="$334" show = {true}/>
-    <Course_card name="CSS" price="$364" show = {false} />
+    <Course_card name="CSS" price="$364" show = {false} />  {/*this has a false attribute so it doesnt show up coz of false condition */}
     <Course_card show = {true}/>   {/*this value is given by default props*/} 
 
 

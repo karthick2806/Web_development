@@ -1,0 +1,7 @@
+.card_1{
+    background-color: burlywood;
+    max-width: 200px;
+    margin:10px;
+    padding:20px;
+    display:inline-block;
+}

@@ -9,7 +9,7 @@ function Course_card({name="JAVA" , price="$654",show="yes" }){    {/*These are 
             <img src=""/>
             <h3>{name}</h3>  {/*creating a simple template where we can simply change the contents on app.jsx*/}
             <p>{price}</p>
-        </div>
+        </div>         
     );
     }
     else{
